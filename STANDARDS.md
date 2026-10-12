@@ -7,7 +7,7 @@ your data always stays yours. Ironlog set most of them first; when in doubt, cop
 - **Local-first.** The phone is the source of truth. No server of ours ever holds
   your data.
 - **Backups go to your own Google Drive** (when an app adds it, it follows
-  Ironlog's Drive sync, shipped in Ironlog 0.33.0 (roadmap B6)). Until then: a manual export button.
+  Ironlog's Drive sync, shipped in Ironlog 0.33.0). Until then: a manual export button.
 - **AI is optional.** Every app works fully without it. When AI is used, it runs on
   your own API key, entered on the device.
 
