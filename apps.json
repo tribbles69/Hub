@@ -1,0 +1,199 @@
+{
+  "owner": "tribbles69",
+  "updated": "2026-10-12",
+  "apps": [
+    {
+      "id": "ironlog",
+      "name": "Ironlog",
+      "tagline": "Training log, programme, VBT and PRs",
+      "status": "live",
+      "repo": "tribbles69/Ironlog",
+      "url": "https://tribbles69.github.io/Ironlog/",
+      "versionUrl": "https://raw.githubusercontent.com/tribbles69/Ironlog/main/version.json",
+      "roadmap": "https://raw.githubusercontent.com/tribbles69/Ironlog/main/r%26d/ROADMAP.md",
+      "extraRoadmap": "roadmaps/ironlog-from-audit.md",
+      "replaces": [
+        "Hevy",
+        "Lyfta",
+        "Liftosaur",
+        "REPPIN",
+        "JuggernautAI",
+        "Tonnage",
+        "Liftoff",
+        "StrengthLog",
+        "Strength Level",
+        "MadMuscles",
+        "TrainPod",
+        "WorkoutLocker",
+        "Qwik VBT",
+        "VBTgo",
+        "Vitruve",
+        "Metric",
+        "PDC Performance",
+        "pliability",
+        "GOWOD",
+        "INTVL",
+        "Crooked Iron"
+      ]
+    },
+    {
+      "id": "kraftur",
+      "name": "Kraftur",
+      "tagline": "Private daily tracker: libido, drive, erections, sleep",
+      "status": "live",
+      "repo": "tribbles69/Boner",
+      "url": "https://tribbles69.github.io/Boner/",
+      "versionUrl": null,
+      "roadmap": "roadmaps/kraftur.md",
+      "replaces": [
+        "Sleep Tracker"
+      ]
+    },
+    {
+      "id": "rounds",
+      "name": "Rounds",
+      "tagline": "Work cleaning checklist for A and B block",
+      "status": "live",
+      "repo": "tribbles69/rounds",
+      "url": "https://tribbles69.github.io/rounds/",
+      "versionUrl": null,
+      "roadmap": "roadmaps/rounds.md",
+      "replaces": []
+    },
+    {
+      "id": "food",
+      "name": "Food",
+      "tagline": "Food diary with targets, barcodes and recipes (working name)",
+      "status": "next",
+      "repo": null,
+      "url": null,
+      "versionUrl": null,
+      "roadmap": "roadmaps/food.md",
+      "replaces": [
+        "Cronometer",
+        "MyFitnessPal"
+      ]
+    },
+    {
+      "id": "tally",
+      "name": "Tally",
+      "tagline": "Daily habit ticks with a year grid per category",
+      "status": "next",
+      "repo": null,
+      "url": null,
+      "versionUrl": null,
+      "roadmap": "roadmaps/tally.md",
+      "replaces": [
+        "Finch",
+        "Streakletics",
+        "Click Counter"
+      ]
+    },
+    {
+      "id": "toolkit",
+      "name": "Toolkit",
+      "tagline": "Spine meter, inclinometer, compass, tuner (working name)",
+      "status": "idea",
+      "repo": null,
+      "url": null,
+      "versionUrl": null,
+      "roadmap": "roadmaps/toolkit.md",
+      "replaces": [
+        "scolio meter",
+        "Inclinometer",
+        "Compass",
+        "Soundcorset tuner"
+      ]
+    },
+    {
+      "id": "chores",
+      "name": "Home Rounds",
+      "tagline": "Rounds for the flat: repeating chores, shared out",
+      "status": "idea",
+      "repo": null,
+      "url": null,
+      "versionUrl": null,
+      "roadmap": "roadmaps/chores.md",
+      "replaces": [
+        "Chorefriend"
+      ]
+    },
+    {
+      "id": "stamina",
+      "name": "Stamina Meter",
+      "tagline": "Game-style stamina and HP bars from food, sleep and training",
+      "status": "idea",
+      "repo": null,
+      "url": null,
+      "versionUrl": null,
+      "roadmap": "roadmaps/stamina.md",
+      "replaces": []
+    },
+    {
+      "id": "paylater",
+      "name": "Pay-later Tracker",
+      "tagline": "Every Klarna, Clearpay and Zilch instalment in one calendar",
+      "status": "idea",
+      "repo": null,
+      "url": null,
+      "versionUrl": null,
+      "roadmap": "roadmaps/paylater.md",
+      "replaces": []
+    },
+    {
+      "id": "foodbank",
+      "name": "Food Bank Stock",
+      "tagline": "Stock and shelf locations for the food bank, with low-stock alerts",
+      "status": "idea",
+      "repo": null,
+      "url": null,
+      "versionUrl": null,
+      "roadmap": "roadmaps/foodbank.md",
+      "replaces": []
+    },
+    {
+      "id": "hlusta",
+      "name": "Hlusta",
+      "tagline": "PC loudness and audio analyser, later a VST host (Windows, not phone)",
+      "status": "idea",
+      "repo": null,
+      "url": null,
+      "versionUrl": null,
+      "roadmap": "roadmaps/hlusta.md",
+      "replaces": []
+    },
+    {
+      "id": "social",
+      "name": "Social Manager",
+      "tagline": "Plan a week of posts with Claude, images from ComfyUI",
+      "status": "idea",
+      "repo": null,
+      "url": null,
+      "versionUrl": null,
+      "roadmap": "roadmaps/social.md",
+      "replaces": []
+    },
+    {
+      "id": "presence",
+      "name": "Presence Monitor",
+      "tagline": "Watches where your names and handles turn up online",
+      "status": "idea",
+      "repo": null,
+      "url": null,
+      "versionUrl": null,
+      "roadmap": "roadmaps/presence.md",
+      "replaces": []
+    },
+    {
+      "id": "kpho",
+      "name": "Kpho",
+      "tagline": "Old Gemini calorie app, superseded by Food",
+      "status": "retired",
+      "repo": "tribbles69/Kpho",
+      "url": null,
+      "versionUrl": null,
+      "roadmap": null,
+      "replaces": []
+    }
+  ]
+}

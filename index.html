@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#14161c">
+<title>Hub</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<style>
+:root{
+  --bg:#14161c; --panel:#1d2029; --panel2:#252935; --line:#323746;
+  --text:#eceef3; --muted:#9097a8; --accent:#ff7a3d;
+  --live:#4fd18b; --next:#ffb84d; --idea:#5fa8ff; --retired:#6b7286;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{position:sticky;top:0;z-index:5;background:var(--bg);padding:calc(14px + env(safe-area-inset-top)) 16px 10px;border-bottom:1px solid var(--line)}
+header .top{display:flex;align-items:baseline;justify-content:space-between}
+header h1{margin:0;font-size:22px}
+header small{color:var(--muted)}
+.chips{display:flex;gap:6px;margin-top:10px;overflow-x:auto;scrollbar-width:none}
+.chips button{flex:0 0 auto;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--muted);font-weight:600;font-size:14px}
+.chips button.sel{color:var(--text);border-color:var(--accent)}
+main{padding:14px 16px calc(24px + env(safe-area-inset-bottom));max-width:620px;margin:0 auto}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:10px}
+.card .row1{display:flex;align-items:center;gap:8px}
+.card h2{margin:0;font-size:18px;flex:1}
+.pill{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;padding:3px 8px;border-radius:999px;color:#10131a}
+.pill.live{background:var(--live)}.pill.next{background:var(--next)}.pill.idea{background:var(--idea)}.pill.retired{background:var(--retired)}
+.ver{color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums}
+.tag{color:var(--muted);margin:4px 0 0;font-size:14px}
+.rep{color:var(--muted);font-size:12px;margin-top:6px}
+.prog{margin-top:10px}
+.bar{height:6px;background:var(--panel2);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:99px}
+.prog small{color:var(--muted);font-size:12px}
+.acts{display:flex;gap:8px;margin-top:12px}
+.acts a,.acts button{flex:1;text-align:center;text-decoration:none;min-height:42px;display:flex;align-items:center;justify-content:center;border-radius:10px;border:1px solid var(--line);background:var(--panel2);color:var(--text);font-weight:600;font-size:14px}
+.acts a.primary{background:var(--accent);border-color:var(--accent);color:#1a0d05}
+.acts .disabled{opacity:.45}
+.err{color:var(--muted);text-align:center;padding:30px 10px}
+/* roadmap sheet */
+#sheet{position:fixed;inset:0;background:var(--bg);z-index:10;display:none;flex-direction:column}
+#sheet.on{display:flex}
+#sheet .bar2{display:flex;align-items:center;gap:10px;padding:calc(12px + env(safe-area-inset-top)) 12px 10px;border-bottom:1px solid var(--line)}
+#sheet .bar2 button{background:var(--panel);border:1px solid var(--line);color:var(--text);width:44px;height:44px;border-radius:12px;font-size:20px}
+#sheet .bar2 b{flex:1;font-size:17px}
+#sheet .tabs{display:flex;gap:6px;padding:8px 12px 0}
+#sheet .body{overflow-y:auto;padding:12px 16px calc(30px + env(safe-area-inset-bottom));flex:1}
+.md{max-width:620px;margin:0 auto;font-size:15px}
+.md h1{font-size:21px;margin:6px 0 8px}.md h2{font-size:17px;margin:20px 0 6px;color:var(--accent)}.md h3{font-size:15px;margin:16px 0 4px}
+.md p{margin:6px 0}.md ul,.md ol{padding-left:22px;margin:6px 0}.md li{margin:3px 0}
+.md li.task{list-style:none;margin-left:-20px}
+.md li.task .box{display:inline-block;width:16px;height:16px;border:2px solid var(--muted);border-radius:4px;margin-right:8px;vertical-align:-3px}
+.md li.task.done .box{background:var(--live);border-color:var(--live)}
+.md li.task.done{color:var(--muted)}
+.md code{background:var(--panel2);padding:1px 5px;border-radius:5px;font-size:13px}
+.md pre{background:var(--panel);border:1px solid var(--line);padding:10px;border-radius:10px;overflow-x:auto;font-size:12px}
+.md pre code{background:none;padding:0}
+.md a{color:var(--next)}
+.md table{border-collapse:collapse;width:100%;font-size:13px;display:block;overflow-x:auto}
+.md td,.md th{border:1px solid var(--line);padding:5px 7px;text-align:left;vertical-align:top}
+.md del{color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="top"><h1>Hub</h1><small id="summary"></small></div>
+  <div class="chips" id="chips">
+    <button data-f="all" class="sel">All</button><button data-f="live">Live</button><button data-f="next">Next</button><button data-f="idea">Ideas</button><button data-f="retired">Retired</button>
+  </div>
+</header>
+<main id="list"><p class="err">Loading…</p></main>
+
+<div id="sheet">
+  <div class="bar2"><button id="close" aria-label="Back">‹</button><b id="sTitle"></b></div>
+  <div class="tabs chips" id="sTabs"></div>
+  <div class="body"><div class="md" id="sBody"></div></div>
+</div>
+
+<script>
+const VERSION = '1.0.0';
+const $ = s => document.querySelector(s);
+const STATUS = {live:'Live', next:'Next', idea:'Idea', retired:'Retired'};
+const ORDER = ['live','next','idea','retired'];
+let apps = [], filter = 'all';
+const cache = {};
+
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+async function getText(url){
+  if(cache[url]!==undefined) return cache[url];
+  try{ const r = await fetch(url, {cache:'no-cache'}); if(!r.ok) throw 0; return cache[url] = await r.text(); }
+  catch(e){ return cache[url] = null; }
+}
+function progress(md){
+  if(!md) return null;
+  const done=(md.match(/\[x\]/gi)||[]).length, open=(md.match(/\[ \]/g)||[]).length;
+  return done+open ? {done, total:done+open} : null;
+}
+
+async function load(){
+  try{
+    const r = await fetch('apps.json', {cache:'no-cache'}); apps = (await r.json()).apps;
+  }catch(e){ $('#list').innerHTML = '<p class="err">Couldn\'t load apps.json. Open the hub from its web address, not as a file.</p>'; return; }
+  render();
+  // fill versions and progress in the background
+  apps.forEach(async a=>{
+    if(a.versionUrl){ const t = await getText(a.versionUrl); try{ a._ver = JSON.parse(t).version; }catch(e){} }
+    const mds = [a.roadmap, a.extraRoadmap].filter(Boolean);
+    let done=0,total=0;
+    for(const u of mds){ const p = progress(await getText(u)); if(p){ done+=p.done; total+=p.total; } }
+    if(total) a._prog = {done,total};
+    render();
+  });
+}
+
+function render(){
+  const counts = {}; apps.forEach(a=>counts[a.status]=(counts[a.status]||0)+1);
+  $('#summary').textContent = `${counts.live||0} live · ${counts.next||0} next · ${counts.idea||0} ideas`;
+  const list = apps.filter(a=>filter==='all'||a.status===filter)
+                   .sort((x,y)=>ORDER.indexOf(x.status)-ORDER.indexOf(y.status));
+  $('#list').innerHTML = list.map(a=>{
+    const p=a._prog, pct=p?Math.round(p.done/p.total*100):0;
+    const open = a.url ? `<a class="primary" href="${esc(a.url)}">Open</a>`
+               : a.status==='live' ? `<a class="disabled">Link not set</a>` : '';
+    const road = (a.roadmap||a.extraRoadmap) ? `<button data-road="${a.id}">Roadmap</button>` : '';
+    const repo = a.repo ? `<a href="https://github.com/${esc(a.repo)}">Repo</a>` : '';
+    return `<div class="card">
+      <div class="row1"><h2>${esc(a.name)}</h2>${a._ver?`<span class="ver">v${esc(a._ver)}</span>`:''}<span class="pill ${a.status}">${STATUS[a.status]}</span></div>
+      <p class="tag">${esc(a.tagline)}</p>
+      ${a.replaces&&a.replaces.length?`<div class="rep">Replaces: ${a.replaces.map(esc).join(', ')}</div>`:''}
+      ${p?`<div class="prog"><div class="bar"><i style="width:${pct}%"></i></div><small>${p.done} of ${p.total} roadmap items done</small></div>`:''}
+      ${open||road||repo?`<div class="acts">${open}${road}${repo}</div>`:''}
+    </div>`;
+  }).join('') || '<p class="err">Nothing here.</p>';
+}
+
+$('#chips').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  filter=b.dataset.f; document.querySelectorAll('#chips button').forEach(x=>x.classList.toggle('sel',x===b)); render();
+});
+$('#list').addEventListener('click',e=>{ const b=e.target.closest('[data-road]'); if(b) openRoad(b.dataset.road); });
+
+// ---------- roadmap sheet ----------
+async function openRoad(id, which){
+  const a = apps.find(x=>x.id===id); if(!a) return;
+  const srcs = [a.roadmap && {label:'Roadmap', url:a.roadmap}, a.extraRoadmap && {label:'Audit extras', url:a.extraRoadmap}].filter(Boolean);
+  const cur = srcs[which||0];
+  $('#sTitle').textContent = a.name;
+  $('#sTabs').innerHTML = srcs.length>1 ? srcs.map((s,i)=>`<button data-i="${i}" class="${s===cur?'sel':''}">${s.label}</button>`).join('') : '';
+  $('#sTabs').onclick = e=>{ const b=e.target.closest('button'); if(b) openRoad(id, +b.dataset.i); };
+  $('#sheet').classList.add('on');
+  if(!history.state||!history.state.sheet) history.pushState({sheet:1},'');
+  $('#sBody').innerHTML = '<p class="err">Loading…</p>';
+  const md = await getText(cur.url);
+  $('#sBody').innerHTML = md ? renderMd(md) : '<p class="err">Couldn\'t load this roadmap. Check your connection.</p>';
+  $('.body').scrollTop = 0;
+}
+function closeSheet(){ $('#sheet').classList.remove('on'); }
+$('#close').onclick = ()=>history.back();
+window.addEventListener('popstate',closeSheet);
+
+// small markdown renderer: headings, lists, tasks, tables, code, bold, italics, links, strike
+function inline(s){
+  return esc(s)
+    .replace(/`([^`]+)`/g,'<code>$1</code>')
+    .replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>')
+    .replace(/~~([^~]+)~~/g,'<del>$1</del>')
+    .replace(/(^|[\s(])\*([^*\s][^*]*)\*/g,'$1<em>$2</em>')
+    .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g,(m,t,u)=>`<a href="${u.replace(/"/g,'%22')}" target="_blank" rel="noopener">${t}</a>`)
+    .replace(/&lt;(https?:\/\/[^&]+)&gt;/g,'<a href="$1" target="_blank" rel="noopener">$1</a>');
+}
+function renderMd(md){
+  const lines = md.replace(/\r/g,'').split('\n'); let out='', i=0;
+  while(i<lines.length){
+    let l=lines[i];
+    if(/^```/.test(l)){ let code=''; i++; while(i<lines.length && !/^```/.test(lines[i])) code+=lines[i++]+'\n'; i++; out+=`<pre><code>${esc(code)}</code></pre>`; continue; }
+    let h=l.match(/^(#{1,4})\s+(.*)/);
+    if(h){ const n=Math.min(h[1].length,3); out+=`<h${n}>${inline(h[2]).replace(/^\[x\]/i,'✔').replace(/^\[ \]/,'○')}</h${n}>`; i++; continue; }
+    if(/^\|/.test(l)){
+      const rows=[]; while(i<lines.length && /^\|/.test(lines[i])) rows.push(lines[i++]);
+      const cells=r=>r.replace(/^\||\|$/g,'').split('|').map(c=>c.trim());
+      const body=rows.filter(r=>!/^\|[\s:|-]+\|$/.test(r));
+      out+='<table>'+body.map((r,k)=>'<tr>'+cells(r).map(c=>k===0?`<th>${inline(c)}</th>`:`<td>${inline(c)}</td>`).join('')+'</tr>').join('')+'</table>';
+      continue;
+    }
+    if(/^\s*([-*]|\d+\.)\s+/.test(l)){
+      const ordered=/^\s*\d+\./.test(l); let items='';
+      while(i<lines.length && (/^\s*([-*]|\d+\.)\s+/.test(lines[i]) || (/^\s{2,}\S/.test(lines[i]) && items))){
+        const t=lines[i];
+        if(/^\s*([-*]|\d+\.)\s+/.test(t)){
+          let txt=t.replace(/^\s*([-*]|\d+\.)\s+/,''); const task=txt.match(/^\[( |x|X)\]\s*(.*)/);
+          const indent=/^\s{2,}/.test(t)?' style="margin-left:18px"':'';
+          if(task) items+=`<li class="task${task[1]!==' '?' done':''}"${indent}><span class="box"></span>${inline(task[2])}</li>`;
+          else items+=`<li${indent}>${inline(txt)}</li>`;
+        } else items=items.replace(/<\/li>$/,' '+inline(t.trim())+'</li>');
+        i++;
+      }
+      out+=ordered?`<ol>${items}</ol>`:`<ul>${items}</ul>`; continue;
+    }
+    if(!l.trim()){ i++; continue; }
+    let para=l; i++;
+    while(i<lines.length && lines[i].trim() && !/^(#|\||```|\s*([-*]|\d+\.)\s)/.test(lines[i])) para+=' '+lines[i++].trim();
+    out+=`<p>${inline(para)}</p>`;
+  }
+  return out;
+}
+
+load();
+if('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('sw.js').catch(()=>{});
+</script>
+</body>
+</html>
