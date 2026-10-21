@@ -1,6 +1,6 @@
 # Food — roadmap
 
-**Status:** next up · **Replaces:** Cronometer, MyFitnessPal · **Working name** (rename before the repo is made)
+**Status:** benched 2026-10-21 (Cronometer's free tier does the job; revisit if that changes) · **Replaces:** Cronometer, MyFitnessPal · **Working name** (rename before the repo is made)
 
 A food diary that does what Cronometer and MyFitnessPal do for you, minus the upsells, with your
 history in your hands. Starting material is already in `Ironlog/r&d/food-handover`: the CoFID

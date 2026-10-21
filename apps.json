@@ -1,6 +1,6 @@
 {
   "owner": "tribbles69",
-  "updated": "2026-10-12",
+  "updated": "2026-10-21",
   "apps": [
     {
       "id": "ironlog",
@@ -63,8 +63,8 @@
     {
       "id": "food",
       "name": "Food",
-      "tagline": "Food diary with targets, barcodes and recipes (working name)",
-      "status": "next",
+      "tagline": "Food diary with targets, barcodes and recipes (benched: Cronometer free tier does the job)",
+      "status": "benched",
       "repo": null,
       "url": null,
       "versionUrl": null,

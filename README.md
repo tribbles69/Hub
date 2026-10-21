@@ -16,7 +16,6 @@ stays ours. Open the launcher at the hub's GitHub Pages link to see it all on th
 | Ironlog | Live | Hevy, Lyfta, Liftosaur, JuggernautAI, Tonnage, Liftoff, StrengthLog, VBT apps, mobility apps | [Ironlog](https://github.com/tribbles69/Ironlog) | [in repo](https://github.com/tribbles69/Ironlog/blob/main/r%26d/ROADMAP.md) + [audit extras](roadmaps/ironlog-from-audit.md) |
 | Kraftur | Live | Sleep Tracker | [Boner](https://github.com/tribbles69/Boner) | [kraftur](roadmaps/kraftur.md) |
 | Rounds | Live | — | [rounds](https://github.com/tribbles69/rounds) | [rounds](roadmaps/rounds.md) |
-| Food | Next | Cronometer, MyFitnessPal | — | [food](roadmaps/food.md) |
 | Tally | Next | Finch, Streakletics, Click Counter | — | [tally](roadmaps/tally.md) |
 | Toolkit | Idea | scolio meter, Inclinometer, Compass, Soundcorset | — | [toolkit](roadmaps/toolkit.md) |
 | Home Rounds | Idea | Chorefriend | — | [chores](roadmaps/chores.md) |
@@ -26,15 +25,18 @@ stays ours. Open the launcher at the hub's GitHub Pages link to see it all on th
 | Hlusta (PC) | Idea | — | — | [hlusta](roadmaps/hlusta.md) |
 | Social Manager | Idea | — | — | [social](roadmaps/social.md) |
 | Presence Monitor | Idea | — | — | [presence](roadmaps/presence.md) |
+| Food | Benched | Cronometer, MyFitnessPal | — | [food](roadmaps/food.md) |
 | Kpho | Retired | → Food | [Kpho](https://github.com/tribbles69/Kpho) | — |
 
 ## Build order
 
-1. **Food** — two paid apps out; Ironlog's food export and lookup tables are waiting in `Ironlog/r&d/food-handover`.
-2. **Tally** — small, already designed.
-3. **Ironlog audit extras** — then delete the lifting and VBT apps.
-4. **Toolkit** — quick sensor builds; the spine meter helps the Schroth experiment.
-5. **Home Rounds**, **Stamina Meter**, **Pay-later Tracker**.
+1. **Tally** — small, already designed.
+2. **Ironlog audit extras** — then delete the lifting and VBT apps.
+3. **Toolkit** — quick sensor builds; the spine meter helps the Schroth experiment.
+4. **Home Rounds**, **Stamina Meter**, **Pay-later Tracker**.
+
+Benched: **Food** (2026-10-21). Cronometer's free tier covers it well, so it stays on the phone
+for now. Ironlog's food export and lookup tables wait in `Ironlog/r&d/food-handover` if it's revived.
 
 Other projects that aren't phone apps (Bergmál, Endalaus, Hollow Pawns, Wythall Civic Watch,
 the AI teammate bots) stay out of this index unless they grow an app.

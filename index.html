@@ -11,7 +11,7 @@
 :root{
   --bg:#14161c; --panel:#1d2029; --panel2:#252935; --line:#323746;
   --text:#eceef3; --muted:#9097a8; --accent:#ff7a3d;
-  --live:#4fd18b; --next:#ffb84d; --idea:#5fa8ff; --retired:#6b7286;
+  --live:#4fd18b; --next:#ffb84d; --idea:#5fa8ff; --benched:#b48cff; --retired:#6b7286;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
@@ -27,7 +27,7 @@ main{padding:14px 16px calc(24px + env(safe-area-inset-bottom));max-width:620px;
 .card .row1{display:flex;align-items:center;gap:8px}
 .card h2{margin:0;font-size:18px;flex:1}
 .pill{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;padding:3px 8px;border-radius:999px;color:#10131a}
-.pill.live{background:var(--live)}.pill.next{background:var(--next)}.pill.idea{background:var(--idea)}.pill.retired{background:var(--retired)}
+.pill.live{background:var(--live)}.pill.next{background:var(--next)}.pill.idea{background:var(--idea)}.pill.benched{background:var(--benched)}.pill.retired{background:var(--retired)}
 .ver{color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums}
 .tag{color:var(--muted);margin:4px 0 0;font-size:14px}
 .rep{color:var(--muted);font-size:12px;margin-top:6px}
@@ -68,7 +68,7 @@ main{padding:14px 16px calc(24px + env(safe-area-inset-bottom));max-width:620px;
 <header>
   <div class="top"><h1>Hub</h1><small id="summary"></small></div>
   <div class="chips" id="chips">
-    <button data-f="all" class="sel">All</button><button data-f="live">Live</button><button data-f="next">Next</button><button data-f="idea">Ideas</button><button data-f="retired">Retired</button>
+    <button data-f="all" class="sel">All</button><button data-f="live">Live</button><button data-f="next">Next</button><button data-f="idea">Ideas</button><button data-f="benched">Benched</button><button data-f="retired">Retired</button>
   </div>
 </header>
 <main id="list"><p class="err">Loading…</p></main>
@@ -80,10 +80,10 @@ main{padding:14px 16px calc(24px + env(safe-area-inset-bottom));max-width:620px;
 </div>
 
 <script>
-const VERSION = '1.0.0';
+const VERSION = '1.1.0';
 const $ = s => document.querySelector(s);
-const STATUS = {live:'Live', next:'Next', idea:'Idea', retired:'Retired'};
-const ORDER = ['live','next','idea','retired'];
+const STATUS = {live:'Live', next:'Next', idea:'Idea', benched:'Benched', retired:'Retired'};
+const ORDER = ['live','next','idea','benched','retired'];
 let apps = [], filter = 'all';
 const cache = {};
 
@@ -117,7 +117,7 @@ async function load(){
 
 function render(){
   const counts = {}; apps.forEach(a=>counts[a.status]=(counts[a.status]||0)+1);
-  $('#summary').textContent = `${counts.live||0} live · ${counts.next||0} next · ${counts.idea||0} ideas`;
+  $('#summary').textContent = `${counts.live||0} live · ${counts.next||0} next · ${counts.idea||0} ideas · ${counts.benched||0} benched`;
   const list = apps.filter(a=>filter==='all'||a.status===filter)
                    .sort((x,y)=>ORDER.indexOf(x.status)-ORDER.indexOf(y.status));
   $('#list').innerHTML = list.map(a=>{
