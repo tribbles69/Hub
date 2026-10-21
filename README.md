@@ -16,7 +16,7 @@ stays ours. Open the launcher at the hub's GitHub Pages link to see it all on th
 | Ironlog | Live | Hevy, Lyfta, Liftosaur, JuggernautAI, Tonnage, Liftoff, StrengthLog, VBT apps, mobility apps | [Ironlog](https://github.com/tribbles69/Ironlog) | [in repo](https://github.com/tribbles69/Ironlog/blob/main/r%26d/ROADMAP.md) + [audit extras](roadmaps/ironlog-from-audit.md) |
 | Kraftur | Live | Sleep Tracker | [Boner](https://github.com/tribbles69/Boner) | [kraftur](roadmaps/kraftur.md) |
 | Rounds | Live | — | [rounds](https://github.com/tribbles69/rounds) | [rounds](roadmaps/rounds.md) |
-| Tally | Next | Finch, Streakletics, Click Counter | — | [tally](roadmaps/tally.md) |
+| Tally | Live | Finch, Streakletics, Click Counter | [Tally](https://github.com/tribbles69/Tally) | [in repo](https://github.com/tribbles69/Tally/blob/main/r%26d/ROADMAP.md) |
 | Toolkit | Idea | scolio meter, Inclinometer, Compass, Soundcorset | — | [toolkit](roadmaps/toolkit.md) |
 | Home Rounds | Idea | Chorefriend | — | [chores](roadmaps/chores.md) |
 | Stamina Meter | Idea | — | — | [stamina](roadmaps/stamina.md) |
@@ -30,10 +30,9 @@ stays ours. Open the launcher at the hub's GitHub Pages link to see it all on th
 
 ## Build order
 
-1. **Tally** — small, already designed.
-2. **Ironlog audit extras** — then delete the lifting and VBT apps.
-3. **Toolkit** — quick sensor builds; the spine meter helps the Schroth experiment.
-4. **Home Rounds**, **Stamina Meter**, **Pay-later Tracker**.
+1. **Ironlog audit extras** — then delete the lifting and VBT apps.
+2. **Toolkit** — quick sensor builds; the spine meter helps the Schroth experiment.
+3. **Home Rounds**, **Stamina Meter**, **Pay-later Tracker**.
 
 Benched: **Food** (2026-10-21). Cronometer's free tier covers it well, so it stays on the phone
 for now. Ironlog's food export and lookup tables wait in `Ironlog/r&d/food-handover` if it's revived.
