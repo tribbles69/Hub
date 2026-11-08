@@ -9,21 +9,21 @@ timer, progress photos (E4), mobility (E5), calculators (D11).
 To use: move the ones Aaron wants into Ironlog's roadmap, then tick them here.
 
 ## Worth adding
-- [ ] **Weekly sets per muscle against a target range** (Tonnage's MEV/MRV landmarks), using
-      the muscle shares Ironlog already has
+- [x] **Weekly sets per muscle against a target range** (Tonnage's MEV/MRV landmarks), using
+      the muscle shares Ironlog already has — moved to Ironlog roadmap 01 (2026-11-08)
 - [ ] **Strength standards on PR pages** — level and percentile for bodyweight, age and sex
       (Strength Level)
-- [ ] **Interval timer** — build run/rest intervals with audio cues, reusing `Cue` (INTVL);
-      sits next to the HR-zone cardio session
+- [x] **Interval timer** — build run/rest intervals with audio cues, reusing `Cue` (INTVL);
+      sits next to the HR-zone cardio session — moved to Ironlog roadmap 02 (2026-11-08)
 - [ ] **Progression rules you can edit as text**, e.g. "+2.5 kg when all reps land at RIR 1+"
       (Liftosaur) — check how far D5 already goes first
 - [ ] **Mobility self-test that sets the routine** (GOWOD, pliability) — add to the E5 spec:
       knee-to-wall, scratch test, Thomas test, overhead squat, scored over time
-- [ ] **Daily one-second progress clip**, joined into a timelapse of the bulk and cut (1SE) —
-      an extension of E4's progress photos
-- [ ] **Exercise demos** on movement pages (Lyfta) — even a short text cue list per lift
-- [ ] **Video bar-path tracing** (VBTgo, Metric) and depth judging (PDC Performance) — check
-      whether D1's modes already cover video before writing a spec
+- [x] **Daily one-second progress clip**, joined into a timelapse of the bulk and cut (1SE) —
+      an extension of E4's progress photos — moved to Ironlog roadmap 03 (2026-11-08)
+- [x] **Exercise demos** on movement pages (Lyfta) — even a short text cue list per lift — shipped Ironlog 0.80.0 (E14)
+- [x] **Video bar-path tracing** (VBTgo, Metric) and depth judging (PDC Performance) — check
+      whether D1's modes already cover video before writing a spec — moved to Ironlog roadmap 04 (2026-11-08)
 
 ## Then delete
 Once Liftoff and StrengthLog history is imported (B8) and the extras above are in or rejected:
