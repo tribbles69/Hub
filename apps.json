@@ -1,6 +1,6 @@
 {
   "owner": "tribbles69",
-  "updated": "2026-10-21",
+  "updated": "2026-11-09",
   "apps": [
     {
       "id": "ironlog",
@@ -88,6 +88,17 @@
         "Streakletics",
         "Click Counter"
       ]
+    },
+    {
+      "id": "logn",
+      "name": "Logn",
+      "tagline": "Calm and focus: breath pacer, cool-down, HRV check, Drift, Lock-in",
+      "status": "live",
+      "repo": "tribbles69/logn",
+      "url": "https://tribbles69.github.io/logn/",
+      "versionUrl": null,
+      "roadmap": "roadmaps/logn.md",
+      "replaces": []
     },
     {
       "id": "toolkit",

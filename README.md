@@ -17,6 +17,7 @@ stays ours. Open the launcher at the hub's GitHub Pages link to see it all on th
 | Kraftur | Live | Sleep Tracker | [Boner](https://github.com/tribbles69/Boner) | [kraftur](roadmaps/kraftur.md) |
 | Rounds | Live | — | [rounds](https://github.com/tribbles69/rounds) | [rounds](roadmaps/rounds.md) |
 | Tally | Live | Finch, Streakletics, Click Counter | [Tally](https://github.com/tribbles69/Tally) | [in repo](https://github.com/tribbles69/Tally/blob/main/r%26d/ROADMAP.md) |
+| Logn | Live | — | [logn](https://github.com/tribbles69/logn) | [logn](roadmaps/logn.md) |
 | Toolkit | Idea | scolio meter, Inclinometer, Compass, Soundcorset | — | [toolkit](roadmaps/toolkit.md) |
 | Home Rounds | Idea | Chorefriend | — | [chores](roadmaps/chores.md) |
 | Stamina Meter | Idea | — | — | [stamina](roadmaps/stamina.md) |
