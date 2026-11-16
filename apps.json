@@ -1,11 +1,11 @@
 {
   "owner": "tribbles69",
-  "updated": "2026-11-09",
+  "updated": "2026-11-16",
   "apps": [
     {
       "id": "ironlog",
       "name": "Ironlog",
-      "tagline": "Training log, programme, VBT and PRs",
+      "tagline": "Training log, programme, VBT and PRs (moving to an Android APK)",
       "status": "live",
       "repo": "tribbles69/Ironlog",
       "url": "https://tribbles69.github.io/Ironlog/",
@@ -94,7 +94,7 @@
       "name": "Logn",
       "tagline": "Calm and focus: breath pacer, cool-down, HRV check, Drift, Lock-in",
       "status": "live",
-      "repo": "tribbles69/logn",
+      "repo": "tribbles69/Logn",
       "url": "https://tribbles69.github.io/logn/",
       "versionUrl": null,
       "roadmap": "roadmaps/logn.md",
@@ -138,6 +138,17 @@
       "url": null,
       "versionUrl": null,
       "roadmap": "roadmaps/stamina.md",
+      "replaces": []
+    },
+    {
+      "id": "symptoms",
+      "name": "Symptom Logger",
+      "tagline": "Daily symptoms in your own record, read alongside food and training",
+      "status": "idea",
+      "repo": null,
+      "url": null,
+      "versionUrl": null,
+      "roadmap": "roadmaps/symptoms.md",
       "replaces": []
     },
     {
@@ -193,6 +204,17 @@
       "url": null,
       "versionUrl": null,
       "roadmap": "roadmaps/presence.md",
+      "replaces": []
+    },
+    {
+      "id": "clewsco",
+      "name": "Clewsco Dashboard",
+      "tagline": "AI agents running Clewsco's product lines, social and email built in",
+      "status": "idea",
+      "repo": "tribbles69/Clewsco",
+      "url": null,
+      "versionUrl": null,
+      "roadmap": null,
       "replaces": []
     },
     {
